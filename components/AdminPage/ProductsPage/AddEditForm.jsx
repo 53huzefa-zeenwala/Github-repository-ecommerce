@@ -21,6 +21,7 @@ export default function AddEditForm({ title }) {
       setOpenCrop(true)
       setPhotoURL(URL.createObjectURL(file))
     }
+    e.target.values = ''
   }
 
 
@@ -102,7 +103,7 @@ export default function AddEditForm({ title }) {
 
           <div className={styles.imageDiv}>
             <p className={styles.imageSelectDiv}>
-              <input type="file" name="image" ref={fileRef} onChange={imageChange} required />
+              <input type="file"  accept="image/*" name="image" ref={fileRef} onChange={imageChange} required />
               <span>
                 <svg x="0px" y="0px"
                   viewBox="0 0 60.364 60.364">
