@@ -1,0 +1,145 @@
+
+    .main {
+        @apply px-4 py-4
+    }
+
+    .main>h1 {
+        @apply text-3xl font-bold pb-4
+    }
+
+    .form {
+        @apply flex flex-col gap-3
+    }
+
+    .form>input,
+    .form>button,
+    .form>textarea,
+    .form>select,
+    .priceDiv>div>input,
+    .detailDiv>div>input {
+        @apply py-2 px-3 placeholder:font-medium font-medium focus:outline-none border-2 rounded-lg
+    }
+
+    .form>select>option,
+    .form>select {
+        @apply capitalize font-medium
+    }
+
+    .imageSelectDiv>input:first-child {
+        @apply hidden
+    }
+
+    .priceDiv>div,
+    .detailDiv>div {
+        @apply flex gap-3 items-center
+    }
+
+    .priceDiv>div>input,
+    .detailDiv>div>input {
+        @apply w-1/2
+    }
+
+    .detailDiv>div>button {
+        @apply px-4 h-fit py-2 font-semibold
+    }
+
+    .detailDiv>.displayDetailDiv,
+    .priceDiv>h1 {
+        @apply flex-col items-start gap-0 pt-1 capitalize font-medium text-lg px-2
+    }
+
+    .imageDiv {
+        @apply flex justify-center items-center flex-col
+    }
+    .imageDiv>div {
+        @apply w-full flex flex-col gap-1 pt-4
+    }
+    .imageDiv>div>div>div {
+        @apply h-16 aspect-square relative flex bg-white
+    }
+    .imageDiv>div>div {
+        @apply  flex gap-4 items-center text-[#0000EE] overflow-hidden
+    }
+    .imageSelectDiv {
+        @apply relative
+    }
+    .imageSelectDiv > span{
+        @apply absolute top-0 left-0 h-14 aspect-square p-4
+    }
+    .imageSelectButton {
+        @apply h-14 aspect-square rounded-full p-4 z-10 relative
+    }
+
+.cropEasyDiv {
+    @apply h-screen w-full fixed z-50 top-0 right-0 left-0 flex justify-center items-center
+}
+.cropEasyDiv {
+    background-color: hsl(var(--black-color) / .25);
+}
+
+
+
+.main {
+    background-color: hsl(var(--light-white-color));
+}
+
+.main>h1 {
+    font-family: 'Poppins', sans-serif;
+    color: hsl(var(--primary-color));
+}
+
+.detailDiv>div>button {
+    background-color: hsl(var(--primary-color) / .5);
+    color: hsl(var(--black-color) / .75);
+    transition: all 0.5s;
+}
+
+.detailDiv>div>button:focus,
+.detailDiv>div>button:hover {
+    transition: all 0.5s;
+    background-color: hsl(var(--primary-color) / .75);
+    color: hsl(var(--white-color) / .75);
+}
+
+.imageDiv>div>div {
+    background-color: hsl(var(--primary-color) / .25);
+}
+.form>input,
+.form>textarea,
+.form>select,
+.form>select>option,
+.priceDiv>div>input,
+.detailDiv>div>input {
+    border-color: hsl(var(--primary-color) / .25);
+    color: hsl(var(--black-color) / .75);
+}
+
+.form>input:focus,
+.form>textarea:focus,
+.form>select:focus {
+    border-color: hsl(var(--primary-color) / .75);
+}
+
+.detailDiv>.displayDetailDiv,
+.priceDiv>h1 {
+    font-family: 'Jost', sans-serif;
+    color: hsl(var(--primary-color) / .75);
+}
+
+/* .imageSelectDiv > .imageSelectButton {
+    border-color: hsl(var(--primary-color) / .25);
+    color: hsl(var(--black-color) / .75);
+} */
+.imageSelectDiv > .imageSelectButton, .form > button {
+    background-color: hsl(var(--primary-color) / .75);
+    fill: hsl(var(--white-color) / .75);
+    color: hsl(var(--white-color) / .75);
+    font-family: 'Jost', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+.imageDiv > button:hover, .form > button:hover {
+    background-color: hsl(var(--primary-color) / .5);
+    fill: hsl(var(--white-color) / .75);
+    color: hsl(var(--white-color));
+}

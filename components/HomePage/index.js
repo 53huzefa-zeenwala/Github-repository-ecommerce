@@ -1,0 +1,5 @@
+export {default as Category} from './Category'
+export {default as Feature} from './Feature'
+export {default as DisplayCategory} from './DisplayCategory'
+export {default as Products} from './Products'
+export {default as SpecialProducts} from './SpecialProducts'

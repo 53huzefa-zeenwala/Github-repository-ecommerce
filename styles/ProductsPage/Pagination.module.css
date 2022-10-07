@@ -1,0 +1,34 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply px-4 py-2 flex justify-between items-center
+    }
+    .buttonDiv >button {
+        @apply py-1.5 font-medium capitalize text-xl rounded-xl w-full 
+    }
+    .buttonDiv {
+        @apply w-[4.5rem]
+    }
+    
+    .mainDiv >h1 {
+        @apply text-lg capitalize
+    }
+}
+.mainDiv {
+    background-color: hsl(var(--light-white-color));
+}
+.mainDiv > h1{
+    color: hsl(var(--primary-color));
+}
+
+.buttonDiv > button {
+    color: hsl(var(--secondary-color) 35%);
+    background-color: hsl(var(--secondary-color) 92%);
+}
+.buttonDiv > button:hover, .buttonDiv > button:focus {
+    color: hsl(var(--secondary-color) 92%);
+    background-color: hsl(var(--secondary-color) 35%);
+    outline: none;
+}
+

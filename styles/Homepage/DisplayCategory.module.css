@@ -1,0 +1,31 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply px-6 py-10 flex justify-center items-center flex-col gap-6
+    }
+    .displayDiv {
+        @apply relative aspect-square w-full rounded-xl  shadow-lg shadow-slate-400 overflow-hidden
+    }
+    .text {
+        @apply absolute w-full h-full justify-center items-center flex flex-col text-white
+    }
+    .text > h1 {@apply mb-36 text-2xl font-semibold}
+    .text > button {
+        @apply absolute border-2 border-white px-3 py-3 text-lg font-bold outline-none
+    }
+}
+.mainDiv {
+    background-color: hsl(var(--light-white-color));
+}
+.displayDiv {
+    background-color: hsl(var(--white-color));
+}
+.displayDiv > .text{
+    background-color: hsl(var(--black-color) / 0.6);
+}
+.text > button:hover,.text > button:focus  {
+  border-color:hsl(var(--primary-color)) ;
+  color: hsl(var(--primary-color));
+  background-color: hsl(var(--gray-color) / .5);
+}

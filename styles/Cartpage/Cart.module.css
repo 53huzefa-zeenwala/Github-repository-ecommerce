@@ -1,0 +1,207 @@
+@tailwind components;
+
+@layer components {
+    .main {
+        @apply px-4
+    }
+
+    .products {
+        @apply flex flex-col gap-2 py-2
+    }
+
+    .subtotal {
+        @apply flex gap-2 text-3xl font-semibold
+    }
+
+    .subtotal>h1:last-child {
+        @apply flex
+    }
+
+    .subtotal>h1:last-child>span {
+        @apply text-base
+    }
+
+    .button {
+        @apply flex justify-center items-center w-full py-2
+    }
+
+    .button>button {
+        @apply py-2 w-full rounded-lg text-base font-semibold tracking-wide
+    }
+
+    .imageDiv {
+        @apply relative aspect-square rounded-t-xl overflow-hidden w-40 rounded-xl
+    }
+
+    .productsDiv {
+        @apply flex gap-2 w-full flex-col py-6 items-center
+    }
+
+    .textOption {
+        @apply w-full h-[12.5rem]
+    }
+
+    .textDiv {
+        @apply px-1.5 flex flex-col pt-3 justify-center w-full h-[70%]
+    }
+
+    .textDiv>h2>span {
+        @apply capitalize
+    }
+    .productName {
+        @apply cursor-pointer
+    }
+
+    .textDiv>h1 {
+        @apply capitalize font-semibold tracking-wide
+    }
+
+    .textDiv>h3 {
+        @apply font-semibold
+    }
+
+
+    .quantityCrl {
+        @apply flex justify-center mb-2
+    }
+
+    .quantityCrl>button {
+        @apply h-8 w-12 flex justify-center items-center relative
+    }
+
+    .quantityCrl>button:last-child {
+        @apply rounded-r-md
+    }
+
+    .quantityCrl>button:first-child {
+        @apply rounded-l-md
+    }
+
+
+
+    .quantityCrl>button:last-child>span {
+        @apply text-2xl absolute -top-1
+    }
+
+    .quantityCrl>h1 {
+        @apply text-base font-medium flex justify-center items-center px-4
+    }
+
+    .quantityCrl>button>div {
+        @apply h-[80%] aspect-square relative
+    }
+
+    .option {
+        @apply flex flex-col gap-0.5 px-2
+    }
+
+    .option>button {
+        @apply flex gap-2 px-2 py-0.5 rounded-lg bg-white w-fit text-sm font-medium
+    }
+
+}
+
+.textOption {
+    background-color: hsl(var(--secondary-color) 99%);
+}
+
+.productDiv {
+    border: 2px solid;
+    border-color: hsl(var(--white-color));
+    overflow: hidden;
+}
+
+.textDiv>h1 {
+    color: hsl(var(--black-color));
+    font-size: 0.8rem;
+}
+
+.textDiv>h3 {
+    font-family: 'Jost', sans-serif;
+    color: hsl(var(--primary-color));
+}
+
+.textDiv>h2 {
+    font-size: 0.85rem;
+    color: hsl(var(--gray-color));
+}
+
+.textDiv>h3>span {
+    --font-size: 0.8rem;
+    font-size: var(--font-size);
+    font-weight: 100;
+    color: hsl(var(--gray-color));
+    position: relative;
+}
+
+.textDiv>h3>span:first-child::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    height: 0.5px;
+    left: 0;
+    top: 50%;
+    bottom: calc(var(--font-size) / 2);
+    background-color: hsl(var(--gray-color));
+}
+
+.productDiv {
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    background-color: hsl(var(--white-color));
+}
+
+
+
+.main {
+    background-color: hsl(var(--light-white-color));
+}
+
+.button>button {
+    background-color: hsl(var(--primary-color));
+    color: hsl(var(--white-color));
+    font-family: 'Poppins', sans-serif;
+}
+
+.button>button:hover,
+.button>button:focus {
+    background-color: hsl(var(--primary-color) / .75);
+
+}
+
+.quantityCrl>h1 {
+    border-top: 1px solid hsl(var(--gray-color));
+    border-bottom: 1px solid hsl(var(--gray-color));
+    box-shadow: 0px 1px 2px 0px hsl(var(--gray-color));
+    /* background: hsl(var(--light-white-color)); */
+}
+
+.quantityCrl>button:first-child {
+    box-shadow: -1px 1px 2px 0px hsl(var(--gray-color)),
+        inset 0px 0px 3px 0px hsl(var(--gray-color));
+}
+
+.quantityCrl>button:last-child {
+    box-shadow: 1px 1px 2px 0px hsl(var(--gray-color)), inset 0px 0px 3px 0px hsl(var(--gray-color));
+}
+
+.quantityCrl>button {
+    background: hsl(var(--light-white-color));
+}
+
+.quantityCrl>button,
+.option>button {
+    transition: scale 0.5s;
+    border: 0.5px solid hsl(var(--gray-color));
+
+}
+
+.quantityCrl>button:hover,
+.quantityCrl>button:focus,
+.option>button:hover,
+.option>button:focus {
+    transition: scale 0.5s;
+    transform: scale(1.025);
+}

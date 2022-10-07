@@ -1,0 +1,49 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply flex items-center justify-center flex-col pb-4
+    }
+
+    .imageDiv {
+        @apply aspect-square w-[90%] flex justify-center items-center relative
+    }
+
+    .textDiv {@apply px-4}
+    .textDiv>h3 {
+        @apply uppercase text-base 
+    }
+    .textDiv>p {
+        @apply text-sm
+    }
+    .textDiv>h1 {
+        @apply text-base font-semibold text-5xl py-6
+    }
+    .textDiv > button {
+        @apply text-lg py-3 px-6 my-4
+    }
+}
+
+.textDiv>h1 {
+    font-family: 'Jost', sans-serif;
+}
+.textDiv>button {
+    background-color: hsl(var(--primary-color));
+    color: hsl(var(--white-color));
+}
+
+.mainDiv {
+    --imagediv-color: #ebebec;
+    --imagediv-circle: #e1e1e2;
+    background-color: var(--imagediv-color);
+}
+
+.imageDiv>.circle {
+    height: 90%;
+    aspect-ratio: 1;
+    border: 3.5rem solid var(--imagediv-circle);
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

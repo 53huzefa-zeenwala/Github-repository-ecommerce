@@ -1,0 +1,139 @@
+@tailwind components;
+
+@layer components {
+    .sliderMainDiv {
+        @apply w-full aspect-square bg-white
+    }
+
+    .slider {
+        @apply w-full h-full relative
+    }
+
+
+    .discountCircle {
+        @apply absolute top-0 z-10 p-1 m-4 bg-red-600 rounded-full w-fit aspect-square flex justify-center items-center text-white font-bold
+    }
+
+    .textDiv {
+        @apply px-4 py-2 border-t-4
+    }
+
+    .textDiv>.name {
+        @apply text-xl font-semibold -tracking-tight py-3
+    }
+
+    .priceDiv {
+        @apply flex gap-2 items-baseline
+    }
+
+    .textDiv>.priceDiv>.price {
+        @apply font-bold text-3xl relative pl-2
+    }
+
+    .textDiv>.priceDiv>.price>span {
+        @apply font-medium text-sm absolute top-0.5 left-0
+    }
+
+    .textDiv>.priceDiv>.discount {
+        @apply text-3xl text-red-600
+    }
+
+    /* button style start here  */
+    .buttonDiv {
+        @apply flex flex-col px-10 gap-3 py-5
+    }
+    .buttonDiv > button {
+        @apply text-lg font-medium w-11/12 py-2.5 rounded
+    }
+    /* detail style  */
+    .detailDiv >h1, .descDiv > h1 {
+        @apply text-xl font-bold py-1
+    }
+    .descDiv > p {
+        @apply text-lg font-medium px-3
+    }
+    .detailDiv > ul {
+        @apply flex gap-2 text-lg px-3 capitalize
+    }
+    
+    .detailDiv > ul >li:first-child {
+        @apply  font-semibold
+    }
+
+    /* image modal style  */
+    .imageModelDiv {
+        @apply fixed h-screen w-screen bg-white top-0 z-10
+    }
+    .imageModelDiv >.modelUpperPaint {
+        @apply absolute top-0 w-full z-50 py-1
+        
+    }
+    .imageModelDiv >.modelUpperPaint > .closeButton{
+        @apply h-6 aspect-square m-3
+    }
+    .modelSwiperDiv {
+        @apply flex w-full h-full items-center
+    }
+    .modelSwiperDiv > .modelSwiperInnerDiv {
+        @apply relative w-full aspect-square
+    }
+    .modelSwiperDiv > .modelSwiperLowerDiv {
+        @apply absolute h-24 w-screen bottom-0 cursor-pointer
+    }
+    
+}
+.imageModelDiv >.modelUpperPaint {
+    background-color: hsl(var(--primary-res-color) 58%);
+}
+.imageModelDiv >.modelUpperPaint> .closeButton > svg {
+    fill: hsl(var(--white-color));
+}
+.mainDiv {
+    position: relative;
+}
+
+.textDiv {
+    background-color: hsl(var(--light-white-color));
+}
+
+.textDiv>.name {
+    font-family: 'Poppins', sans-serif;
+}
+
+.textDiv>.priceDiv>.price {
+    font-family: 'Jost', sans-serif;
+}
+
+.textDiv>.mrpDiv>h3 {
+    --font-size: 1rem;
+    font-size: var(--font-size);
+    display: inline;
+    position: relative;
+}
+
+.textDiv>.mrpDiv>.mrpPrice::after {
+    content: '';
+    width: 90%;
+    position: absolute;
+    height: 2px;
+    left: 15%;
+    bottom: calc(var(--font-size) / 2);
+    background-color: #000;
+}
+
+.addCartButton {
+    color: hsl(var(--light-white-color));
+    background-color: hsl(var(--primary-res-color) 60%);
+}
+.shopButton {
+    color: hsl(var(--white-color));
+    background-color: hsl(var(--primary-res-color) 45%);
+}
+.addCartButton:hover, .addCartButton:focus {
+    background-color: hsl(var(--primary-res-color) 70%);
+    outline: none;
+}
+.shopButton:hover, .shopButton:focus {
+    background-color: hsl(var(--primary-res-color) 55%);
+    outline: none;
+}

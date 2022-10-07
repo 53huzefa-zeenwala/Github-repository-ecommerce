@@ -1,0 +1,77 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply px-4
+    }
+    .heading {
+        @apply py-4 text-3xl font-semibold tracking-wide
+    }
+    .buttonDiv > button {
+        @apply w-full text-center py-2.5 my-2 rounded-lg font-semibold text-xl
+    }
+    /* products styling  */
+    .productsDiv {
+        @apply flex flex-col gap-2
+    }
+    .productDiv {
+        @apply flex gap-2 border-2 items-center rounded-xl overflow-hidden
+    }
+    .productDiv div > h2 {
+        @apply text-lg capitalize font-medium
+    }
+    .productDiv > .imageDiv {
+        @apply relative h-28 aspect-square
+    }
+
+    /* Pricing styling  */
+    .pricingDiv > table {
+        @apply w-full my-2
+    }
+    .pricingDiv > table > tbody {
+        @apply flex flex-col gap-2 w-full 
+    }
+    .pricingDiv > table > tbody > tr {
+        @apply flex justify-between w-full text-lg font-bold border-b-2
+    }
+    .pricingDiv > table > tbody > .total {
+        @apply text-xl
+    }
+}
+
+.heading {
+    background-color: hsl(var(--light-white-color));
+    color: hsl(var(--primary-color));
+    font-family: 'Jost', 'Segeo UI', sans-serif;
+}
+.buttonDiv > button {
+    background-color: hsl(var(--primary-color) / .85);
+    color: hsl(var(--white-color));
+    transform: all .5s;
+}
+.buttonDiv > button:hover, .buttonDiv > button:focus {
+    transform: all .5s;
+    background-color: hsl(var(--primary-color));
+    color: hsl(var(--white-color));    
+}
+
+
+.mainDiv {
+    background-color: hsl(var(--light-white-color));
+}
+.productDiv {
+    border-color: hsl(var(--white-color));
+}
+.productDiv > .imageDiv {
+    background-color: hsl(var(--white-color));
+}
+
+
+.pricingDiv > table > tbody > tr {
+    color: hsl(var(--black-color) / .5);
+    border-color: hsl(var(--primary-color) / .25);
+}
+.pricingDiv > table > tbody > .total {
+    color: hsl(var(--black-color));
+    border: none;
+}

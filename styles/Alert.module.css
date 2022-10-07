@@ -1,0 +1,36 @@
+.main {
+    --success-color: #28a745;
+    --info-color: #ffcc00;
+    --alert-color: #cc3300;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    z-index: 5;
+    padding:0.75rem;
+    border-radius: 12px;
+    opacity: 0;
+}
+.main > h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.main[data-error=true], .main[data-info=true], .main[data-success=true] {
+    opacity: 1;
+    transform: opacity 0.25s;
+}
+.main[data-error=true] {
+    color: hsl(0, 0%, 97%);
+    background-color: var(--alert-color);
+}
+.main[data-info=true] {
+    color: hsl(0, 0%, 50%);
+    background-color: var(--info-color);
+}
+.main[data-success=true] {
+    color: hsl(0, 0%, 97%);
+    background-color: var(--success-color);
+}

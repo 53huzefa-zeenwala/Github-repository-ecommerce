@@ -1,0 +1,63 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply w-full fixed top-0 h-screen z-10
+    }
+    .categoryDiv {
+        @apply bg-white w-80 h-full relative
+    }
+    .categoryDiv>button {
+        @apply absolute w-6 aspect-square right-6 top-10
+    }
+    .categoryDiv>ul {
+        @apply pt-20
+    }
+    .categoryDiv>ul>li {
+        @apply py-2 text-lg capitalize pl-6
+    }
+    .buttonDiv {
+        @apply bg-white p-4
+    }
+    .button {
+        @apply h-12 w-3/4 flex gap-2 px-6 items-center
+    }
+    .button>.icon>svg {
+        @apply h-5 w-6
+    }
+}
+
+.categoryDiv>ul>li:hover,
+.categoryDiv>ul>li:focus,
+.categoryDiv>ul>.active {
+    background-color: hsl(var(--light-white-color));
+    color: hsl(var(--primary-color));
+}
+
+
+.button:hover,
+.button:focus {
+    background-color: hsl(var(--light-white-color));
+    color: hsl(var(--primary-color));
+    fill: hsl(var(--primary-color));
+}
+
+
+.button {
+    background-color: hsl(var(--light-white-color));
+}
+
+.mainDiv>.categoryDiv,
+.mainDiv[data-categorystatus="false"] {
+    transition: transform .5s;
+    transform: translateX(-100%);
+}
+
+.mainDiv[data-categorystatus="true"] {
+    background-color: hsl(var(--black-color) /0.75);
+}
+
+.mainDiv[data-categorystatus="true"]>.categoryDiv {
+    transition: transform .5s;
+    transform: translateX(0%);
+}

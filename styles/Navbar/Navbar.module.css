@@ -1,0 +1,127 @@
+@tailwind components;
+
+@layer components {
+    .nav {
+        @apply pr-7 pl-4 flex justify-between items-center py-6 
+    }
+    .navLeft, .navRight {
+        @apply flex gap-4 items-center
+    }
+    .navLogo {
+        @apply relative w-32 h-8
+    }
+    .cart, .user {
+        @apply h-5 aspect-square
+    }
+    .cart {
+        @apply relative
+    }
+    .cartItems {
+        @apply absolute -right-6 -top-4 h-5 w-5 p-3 flex justify-center items-center rounded-full
+    }
+}
+.nav{
+    background-color: hsl(var(--light-white-color));
+    z-index: 10;
+}
+
+.cartItems {
+    background-color: hsl(var(--primary-color));
+    border: 2px solid hsl(var(--white-color));
+    color:hsl(var(--white-color));
+}
+
+/* hamburger  */
+.hamburger {
+    display: flex;
+    justify-content: space-evenly;
+    height: 1.5rem;
+    aspect-ratio: 1;
+    gap: 1px;
+    flex-direction: column;
+    transition: all .5s;
+    position: relative;
+}
+
+.hamburger>span {
+    height: 2px;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    transition: all 0.5s;
+}
+
+.hamburger>.one {
+    width: 100%;
+}
+
+.hamburger>.two {
+    width: 80%;
+}
+
+.hamburger>.three {
+    width: 85%;
+}
+.hamburger[data-navstatus="true"] > span {
+    transition: all 0.5s;
+}
+
+.hamburger[data-navstatus="true"]>.one {
+    position: absolute;
+    width: 100%;
+    transform-origin: center;
+    transform: rotate(45deg);height: 1.5px;
+}
+
+.hamburger[data-navstatus="true"]>.two {
+    transform: scale(0);
+}
+
+.hamburger[data-navstatus="true"]>.three {
+    position: absolute;
+    width: 100%;
+    transform-origin: center;
+    width: 100%;transform: rotate(-45deg);height: 1.5px;
+}
+
+/* drop down css */
+.dropDown {
+    --animation-time: .5s;
+    z-index: -10;
+    height: 0;
+    position: relative;
+    transition: height var(--animation-time);
+    background-color: hsl(var(--light-white-color));
+}
+
+.dropDown>ul>li {
+    transition: transform var(--animation-time);
+    transform: translateY(-50%);
+    padding: .5rem 1.5rem;
+    border-top: 2px solid hsl(var(--secondary-color) 92%);
+}
+
+.dropDown>ul>.active,
+.dropDown>ul>li>a:hover,
+.dropDown>ul>li>a:focus {
+    color: hsl(var(--primary-color));
+}
+
+
+.dropDown[data-navstatus="true"] {
+    transition: height var(--animation-time);
+    height: 8rem;
+    animation: showzindex forwards;
+    animation-delay: .5s;
+}
+
+@keyframes showzindex {
+    100% {
+        z-index: 0;
+    }
+}
+
+.dropDown[data-navstatus="true"]>ul>li {
+    transition: transform var(--animation-time);
+    transform: translateY(0%);
+}

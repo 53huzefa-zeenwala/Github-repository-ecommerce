@@ -1,0 +1,138 @@
+@tailwind components;
+
+
+@layer components {
+    .catMainDiv {
+        @apply w-full fixed top-0 h-screen z-10
+    }
+
+    .categoryDiv {
+        @apply bg-white w-80 h-full relative
+    }
+
+    /* filter div  */
+    .filterMainDiv {
+        @apply w-full fixed top-0 h-screen z-10
+    }
+
+    .filterDiv {
+        @apply bg-white w-full h-full absolute bottom-0
+    }
+    .filterButtonDiv {
+        @apply w-full py-2 flex justify-between items-center px-3 mb-2
+    }
+    .filterButtonDiv >span {
+        @apply text-base font-medium capitalize
+    }
+    .filterButtonDiv> button {
+        @apply capitalize font-medium text-xl
+    }
+    .filter {
+        @apply py-2 px-2
+    }
+    .filter>h1 {
+        @apply text-lg font-semibold px-1 capitalize
+    }
+    .filter>button {
+        @apply p-1 m-1 rounded-lg capitalize font-normal border-2
+    }
+
+
+    .categoryDiv>button {
+        @apply absolute w-6 aspect-square right-6 top-10
+    }
+
+    .categoryDiv>ul {
+        @apply pt-20
+    }
+
+    .categoryDiv>ul>li {
+        @apply py-2 text-lg capitalize pl-6
+    }
+
+    .buttonDiv {
+        @apply bg-white p-4 flex justify-between
+    }
+
+    .buttonDiv>button {
+        @apply h-12 flex gap-2 px-4 items-center
+    }
+
+    .categoryButton {
+        @apply w-3/5 
+    }
+    .filterButton {
+        @apply w-3/12 font-medium text-xl justify-end
+    }
+
+    button>.icon>svg {
+        @apply h-5 w-6
+    }
+    /* .filterButtonDiv {
+        @apply 
+    } */
+}
+
+.categoryDiv>ul>li:hover,
+.categoryDiv>ul>li:focus,
+.categoryDiv>ul>.active {
+    background-color: hsl(var(--light-white-color));
+    color: hsl(var(--primary-color));
+}
+
+
+.buttonDiv>button:hover,
+.buttonDiv>button:focus {
+    /* background-color: hsl(var(--light-white-color)); */
+    color: hsl(var(--primary-color));
+    fill: hsl(var(--primary-color));
+}
+
+
+.categoryButton {
+    background-color: hsl(var(--light-white-color));
+}
+
+.catMainDiv>.categoryDiv,
+.catMainDiv[data-categorystatus="false"] {
+    transition: transform .5s;
+    transform: translateX(-100%);
+}
+
+.filterMainDiv[data-filterstatus="true"],
+.catMainDiv[data-categorystatus="true"] {
+    background-color: hsl(var(--black-color) /0.75);
+}
+
+
+.catMainDiv[data-categorystatus="true"]>.categoryDiv {
+    transition: transform .5s;
+    transform: translateX(0%);
+}
+
+/* filter div  */
+
+.filterMainDiv>.filterDiv,
+.filterMainDiv[data-filterstatus="false"] {
+    transition: transform 1s;
+    transform: translateY(100%);
+}
+
+.filterMainDiv[data-filterstatus="true"]>.filterDiv {
+    transition: transform 1s;
+    transform: translateY(0%);
+}
+
+.filterButtonDiv {
+    box-shadow: 0 0 10px 0 rgb(120, 120, 120);
+    color: hsl(var(--primary-color));
+}
+.filter>button {
+    background-color: hsl(var(--secondary-color) 96%);
+    border-color: hsl(var(--secondary-color) 96%);
+}
+.filter>button:hover, .filter>.active {
+    border-color: hsl(var(--primary-res-color) 90%);
+    color: hsl(var(--primary-color));
+    background-color: hsl(var(--primary-res-color) 96%);
+}

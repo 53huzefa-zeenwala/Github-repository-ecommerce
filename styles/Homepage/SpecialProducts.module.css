@@ -1,0 +1,56 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply px-6 py-10 flex justify-center items-center flex-col gap-6
+    }
+
+    .displayDiv {
+        @apply relative h-56 w-full rounded-xl shadow-lg shadow-slate-400 overflow-hidden
+    }
+
+    .text {
+        @apply absolute w-full h-full justify-center items-center flex flex-col gap-4
+    }
+
+    .text>h1 {
+        @apply text-2xl font-semibold uppercase
+    }
+
+    .text>div>button {
+        @apply border-2 px-3 py-3 text-lg font-bold outline-none
+    }
+
+    .text>p {
+        @apply w-10/12 text-center font-bold
+    }
+    .text > div {
+        @apply flex justify-between items-center w-[90%]
+    }
+    .text > div > h3{
+        @apply text-3xl font-semibold
+    }
+}
+
+.text > div > h3{
+    font-family: 'Jost', sans-serif;
+}
+.mainDiv {
+    background-color: hsl(var(--light-white-color));
+}
+
+.displayDiv>.text {
+    background-color: hsl(var(--black-color) / 0.5);
+    color: hsl(var(--secondary-color) 90%);
+}
+
+.text>div>button {
+    border-color: hsl(var(--secondary-color) 90%);
+}
+
+.text>div>button:hover,
+.text>div>button:focus {
+    border-color: hsl(var(--primary-color));
+    color: hsl(var(--primary-color));
+    background-color: hsl(var(--gray-color) / .5);
+}

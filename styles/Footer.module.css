@@ -1,0 +1,42 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply px-4 py-2
+    }
+    .logo {
+        @apply h-12 w-40 pl-4
+    }
+    .logo > div {
+        @apply h-full w-full relative
+    }
+    .about > p {
+        @apply py-2 font-semibold -tracking-tighter pl-6
+    }
+    .socialMedia > h1, .contact > h1 {
+       @apply pl-4 text-2xl font-bold uppercase py-2
+    }
+    .socialMedia > ul {
+        @apply flex gap-2 py-2 pl-6
+    }
+    .socialMedia > ul > li > a{
+        @apply relative h-6 aspect-square cursor-pointer
+    }
+    .contact > a {
+        @apply text-xl font-bold pl-6 py-3
+    }
+    .copyRight {
+        @apply font-normal text-lg text-center mt-4 pt-1
+    }
+}
+
+.logo,.socialMedia > h1,.contact > h1 {
+    border-left: 4px solid hsl(var(--primary-color));
+}
+.about > p .socialMedia > h1, .contact > h1 ,.contact > a {
+    font-family: 'Poppins', sans-serif;
+}
+
+.copyRight {
+    border-top: 2px solid hsl(var(--primary-color));
+}

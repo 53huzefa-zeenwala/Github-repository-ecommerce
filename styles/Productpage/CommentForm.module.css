@@ -1,0 +1,67 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply px-4 py-4
+    }
+
+    .mainDiv>h3 {
+        @apply text-xl mb-2 font-semibold border-b pb-1
+    }
+
+    .textareaDiv,
+    .checkboxDiv {
+        @apply grid grid-cols-1 gap-4 mb-3
+    }
+
+    .textareaDiv>textarea {
+        @apply p-3 outline-none w-full rounded-lg h-24 focus:ring-2 focus:ring-gray-200 text-gray-700
+    }
+
+    .inputDiv {
+        @apply grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4
+    }
+
+    .inputDiv>input {
+        @apply py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 text-gray-700
+    }
+
+    .error {
+        @apply text-xs text-red-500
+    }
+
+    .submitButton {
+        @apply transition duration-500 ease-in inline-block text-lg font-medium rounded-lg text-white px-4 py-2 cursor-pointer
+    }
+
+    .successMessage {
+        @apply text-xl float-right font-semibold mt-3 text-green-500
+    }
+}
+
+.mainDiv {
+    background-color: hsl(var(--light-white-color));
+}
+
+.mainDiv>h3 {
+    color: hsl(var(--primary-color));
+    border-color: hsl(var(--secondary-color) 75%);
+}
+
+.submitButton {
+    background-color: hsl(var(--primary-color));
+}
+
+.submitButton:hover, .submitButton:focus {
+    background-color: hsl(var(--secondary-color) 75%);
+}
+
+.checkboxDiv>div>label {
+    color: hsl(var(--gray-color));
+    cursor: pointer;
+}
+
+.textareaDiv>textarea,
+.inputDiv>input {
+    background-color: hsl(var(--secondary-color) 95%);
+}

@@ -1,0 +1,105 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply px-6 py-2 flex flex-col
+    }
+
+    .mainDiv>h1 {
+        @apply text-3xl capitalize font-medium
+    }
+
+    .mainDiv>a {
+        @apply text-base text-right
+    }
+
+    .imageDiv {
+        @apply relative aspect-square rounded-t-xl overflow-hidden w-40 rounded-xl
+    }
+
+    .productsDiv {
+        @apply flex gap-2 w-full flex-col py-6
+    }
+
+    .textDiv {
+        @apply px-1.5 flex flex-col pt-3 justify-center w-full
+    }
+    
+    .textDiv>h2>span {
+        @apply capitalize
+    }
+    .textDiv>h1 {
+        @apply capitalize font-semibold tracking-wide
+    }
+
+    .textDiv>h3 {
+        @apply font-semibold
+    }
+}
+
+.textDiv {
+    background-color: hsl(var(--secondary-color) 99%);
+}
+.productDiv {
+    border: 2px solid;
+    border-color: hsl(var(--white-color));
+    overflow: hidden;
+}
+
+
+.textDiv>h1 {color: hsl(var(--black-color)); font-size: 0.8rem;}
+.textDiv>h3 {
+    font-family: 'Jost', sans-serif;
+    color: hsl(var(--primary-color));
+}
+.textDiv>h2 {
+    font-size: 0.85rem;
+    color: hsl(var(--gray-color));
+}
+.textDiv>h3>span {
+    --font-size:0.8rem;
+    font-size: var(--font-size);
+    font-weight: 100;
+    color: hsl(var(--gray-color));
+    position: relative;
+}
+
+.textDiv>h3>span:first-child::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    height: 0.5px;
+    left: 0;
+    top: 50%;
+    bottom: calc(var(--font-size) / 2);
+    background-color: hsl(var(--gray-color));
+}
+
+.mainDiv>a {
+    color: hsl(var(--primary-color));
+}
+
+.mainDiv {
+    background-color: hsl(var(--light-white-color));
+}
+
+.mainDiv>a:hover,
+.mainDiv>a:hover {
+    color: hsl(var(--black-color));
+}
+
+
+.productDiv {
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    background-color: hsl(var(--white-color));
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.productDiv:hover, .productDiv:hover {
+    transform: scale(1.025);
+}
+

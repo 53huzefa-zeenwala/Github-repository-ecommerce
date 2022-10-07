@@ -1,0 +1,65 @@
+.main {
+    background-color: rgba(0, 0, 0, 0.45);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.warning[data-show="true"] {
+    opacity: 1;
+    transform: opacity 1s;
+}
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: hsl(var(--light-white-color));
+    padding: 1.5rem;
+    gap:1rem;
+}
+
+.message > h1 {
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+.message > div {
+    width: 20%;
+    aspect-ratio: 1;
+    position: relative;
+}
+.buttons {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem;
+    gap: 0.25rem;
+}
+.buttons > button{
+    width: 100%;
+    font-size: 1.15rem;
+    padding-block: .25rem;
+    font-weight: 700;
+    border-radius: 1rem;
+}
+
+.buttons > button:hover, .buttons > button:focus {
+    background-color: hsl(var(--light-white-color));
+}

@@ -1,0 +1,59 @@
+@tailwind components;
+
+@layer components {
+    .loginDiv {
+        @apply px-6 w-full h-[70vh] flex justify-center items-center flex-col gap-3 pb-[10vh]
+    }
+
+    .loginDiv>h1 {
+        @apply py-3 text-4xl font-semibold
+    }
+
+    .loginDiv>form {
+        @apply flex flex-col items-center justify-center gap-3 z-10
+    }
+
+    .loginDiv>form>button {
+        @apply text-center w-full py-2 text-xl font-semibold rounded-lg my-3
+    }
+
+    .loginDiv>form>div>input {
+        @apply w-full text-xl font-medium px-2 py-3 rounded-lg
+    }
+}
+
+.loginDiv {
+    background-color: hsl(var(--light-white-color));
+    position: relative;
+}
+
+.loginDiv>h1 {
+    color: hsl(var(--primary-color));
+    font-family: 'Jost', sans-serif;
+}
+
+.loginDiv>form>button {
+    background-color: hsl(var(--primary-color));
+    font-family: 'Poppins', sans-serif;
+    color: hsl(var(--white-color));
+    transition: box-shadow 1s;
+    box-shadow: 4px 4px 6px 0px hsl(var(--primary-color) / .75),inset -1px -1px 2px 0px hsl(var(--black-color) / .35);
+}
+
+.loginDiv>form>div>input {
+    transition: box-shadow 1s;
+    box-shadow: inset -1px -1px 2px 0px hsl(var(--black-color) / .35);
+}
+
+.loginDiv>form>button:hover,
+.loginDiv>form>button:focus {
+    box-shadow: 4px 4px 6px 0px hsl(var(--primary-color) / .75),inset 1px 1px 2px 0px hsl(var(--black-color) / .35);
+    background-color: hsl(var(--primary-color)/ .9);
+    transition: box-shadow 1s;
+}
+
+.loginDiv>form>div>input:focus, .loginDiv>form>div>input:hover {
+    outline: none;
+    box-shadow: inset 1px 1px 2px 0px hsl(var(--black-color) / .35);
+    transition: box-shadow 1s;
+}

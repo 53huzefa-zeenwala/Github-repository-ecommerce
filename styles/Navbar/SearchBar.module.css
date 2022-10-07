@@ -1,0 +1,53 @@
+.mainDiv {
+    background-color: hsl(var(--light-white-color));
+    padding: 0 1rem 1rem;
+    height: 4.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBarDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.searchBarDiv > input{
+    border: 2px solid hsl(var(--secondary-color) 94%);
+    border-right:0 ;
+    width: 80%;
+    height: 100%;
+    padding: 0 1rem;
+}
+.searchBar:focus{
+    outline: none;
+}
+.searchBar:focus ~ .searchButton,.searchButton:focus {
+    background-color: hsl(var(--primary-color));
+}
+
+.searchBar:focus ~ .searchButton > svg, .searchButton:focus > svg {
+    fill: hsl(var(--white-color));
+}
+.searchButton {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: hsl(var(--white-color));
+    border: 2px solid hsl(var(--secondary-color) 94%);
+    border-left:0 ;
+
+}
+.searchButton {
+    justify-content: center;
+    align-items: center;
+}
+.searchButton > svg{
+    width: 24px;
+    height: 20px;
+    fill: hsl(var(--primary-color));
+}

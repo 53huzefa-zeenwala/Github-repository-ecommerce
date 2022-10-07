@@ -1,0 +1,69 @@
+@tailwind components;
+
+@layer components {
+    .successMessageDiv {
+        @apply w-full fixed top-0 h-screen z-10 flex justify-center items-center
+    }
+    .successMessageDiv > div {
+        @apply flex justify-center items-center w-[80%] p-4 text-center relative
+    }
+    .text {
+        @apply flex flex-col gap-2 pt-10
+    }
+    .text > h1 {
+        @apply text-4xl font-bold
+    }
+    .text > p {
+        @apply text-lg font-semibold 
+    }
+    .text > div {
+        @apply text-sm font-semibold flex items-center gap-0.5
+    }
+    .imageDiv {
+        @apply rounded-full absolute h-24 aspect-square top-[-25%] flex justify-center items-center
+    }
+    .imageDiv > div{
+        @apply h-3/5 relative aspect-square
+    }
+    .successMessageDiv > div > button {
+        @apply absolute h-8 rounded-full aspect-square top-0 right-0 m-2 p-1
+    }
+}
+
+.imageDiv {
+    background-color: hsl(var(--primary-color));
+}
+.text > h1 {
+    font-family: 'Jost', sans-serif;
+}
+.text > p {
+    font-family: 'Poppins', sans-serif;
+    color: hsl(var(--black-color) / .8);
+}
+.text > div {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: hsl(var(--black-color) / .5);
+}
+.successMessageDiv > div > button {
+    background-color: hsl(var(--light-white-color));
+}
+
+.successMessageDiv > div {
+    background-color: hsl(var(--white-color));
+    box-shadow: 11px 11px 5px 0px hsl(var(--black-color) / .85);
+}
+.successMessageDiv[data-successmessage="false"]> div,
+.successMessageDiv[data-successmessage="false"] {
+    transition: opacity .5s;
+    opacity: 0;
+}
+
+.successMessageDiv[data-successmessage="true"] {
+    background-color: hsl(var(--black-color) / 0.75);
+}
+
+.successMessageDiv[data-successmessage="true"]> div,
+.successMessageDiv[data-successmessage="true"] {
+    transition: opacity .5s;
+    opacity: 1;
+}

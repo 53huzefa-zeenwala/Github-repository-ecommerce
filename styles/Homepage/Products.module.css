@@ -1,0 +1,101 @@
+@tailwind components;
+
+@layer components {
+    .mainDiv {
+        @apply px-6 py-2 flex flex-col
+    }
+
+    .mainDiv>h1 {
+        @apply text-3xl capitalize font-medium
+    }
+
+    .mainDiv>a {
+        @apply text-base text-right
+    }
+
+    .imageDiv {
+        @apply relative w-full aspect-square rounded-t-xl overflow-hidden
+    }
+
+    .productDiv>h1 {
+        @apply capitalize text-sm px-2
+    }
+
+    .productDiv>h3 {
+        @apply font-semibold px-2 pt-1 pb-2
+    }
+}
+
+
+.productDiv>h1 {color: hsl(var(--gray-color));}
+.productDiv>h3 {
+    font-family: 'Jost', sans-serif;
+    color: hsl(var(--primary-color));
+}
+
+.mainDiv>a {
+    color: hsl(var(--primary-color));
+}
+
+.mainDiv {
+    background-color: hsl(var(--light-white-color));
+}
+
+.mainDiv>a:hover,
+.mainDiv>a:hover {
+    color: hsl(var(--black-color));
+}
+
+.productsDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+.productDiv {
+    border-radius: 12px;
+    position: relative;
+    background-color: hsl(var(--white-color));
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.productDiv:hover, .productDiv:hover {
+    transform: scale(1.025);
+}
+
+.productDiv > i {
+    position: absolute;
+    top: 15px;
+    left: -10px;
+    width: 60%;
+    height: 25px;
+    background-color: hsl(var(--primary-color));
+    border-radius: 15px;
+    border-bottom-left-radius: 0;
+    text-align: center;
+    color: hsl(var(--white-color));
+}
+.productDiv > i::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    width: 10px;
+    height: 15px;
+    left: 0;
+    background-color: hsl(var(--primary-res-color) 40%);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    z-index: 2;
+}
+.productDiv > i::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 10px;
+    height: 5px;
+    background-color: hsl(var(--primary-color));
+    z-index: 0;
+}
