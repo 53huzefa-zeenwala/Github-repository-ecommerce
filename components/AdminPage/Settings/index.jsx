@@ -3,7 +3,7 @@ import { useState } from 'react'
 import styles from '../../../styles/HomePage/Category.module.css'
 import Category from './Category'
 
-export default function Categories() {
+export default function Settings() {
     const [categoryStatus, setCategoryStatus] = useState(false)
     return (
         <>

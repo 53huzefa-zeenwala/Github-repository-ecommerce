@@ -1,27 +1,23 @@
 
-    .main {
-        @apply px-4 py-4
-    }
-
     .main>h1 {
         @apply text-3xl font-bold pb-4
     }
 
     .form {
-        @apply flex flex-col gap-3
+        @apply flex flex-col gap-5 py-3
     }
-
+    
+    .selectData > select,
     .form>input,
     .form>button,
     .form>textarea,
-    .form>select,
-    .priceDiv>div>input,
+    .priceInputDiv>input,
     .detailDiv>div>input {
-        @apply py-2 px-3 placeholder:font-medium font-medium focus:outline-none border-2 rounded-lg
+        @apply py-2 px-3 placeholder:font-medium font-medium focus:outline-none rounded-lg border-2 w-full
     }
 
-    .form>select>option,
-    .form>select {
+    .selectData>select>option,
+    .selectData>select {
         @apply capitalize font-medium
     }
 
@@ -34,53 +30,67 @@
         @apply flex gap-3 items-center
     }
 
-    .priceDiv>div>input,
     .detailDiv>div>input {
         @apply w-1/2
     }
 
-    .detailDiv>div>button {
-        @apply px-4 h-fit py-2 font-semibold
+    .selectData > input,
+    .detailDiv>div>.addButton {
+        @apply px-4 h-fit py-2 font-semibold cursor-pointer rounded-md w-fit
     }
 
     .detailDiv>.displayDetailDiv,
-    .priceDiv>h1 {
-        @apply flex-col items-start gap-0 pt-1 capitalize font-medium text-lg px-2
+    .priceDiv>h3 {
+        @apply flex-col items-start gap-0 pt-1.5 capitalize font-semibold text-xl px-2
+    }
+
+    .displayDetailDiv > div {
+        @apply flex justify-between w-full items-center pt-2 pb-1 border-b-2
+    }
+    .displayDetailDiv > div {
+        border-color: hsl(var(--primary-color) / .25);
+    }
+    .displayDetailDiv > div > span{
+       @apply w-10 p-1 rounded-md
     }
 
     .imageDiv {
         @apply flex justify-center items-center flex-col
     }
-    .imageDiv>div {
-        @apply w-full flex flex-col gap-1 pt-4
+    .upperImageDiv {
+        @apply w-full pt-4 grid grid-cols-3 gap-4
     }
-    .imageDiv>div>div>div {
-        @apply h-16 aspect-square relative flex bg-white
+    .uploadedImageDiv {
+        @apply h-full flex flex-col
     }
-    .imageDiv>div>div {
-        @apply  flex gap-4 items-center text-[#0000EE] overflow-hidden
+   
+    .uploadedImageDiv>a>div {
+        @apply h-full aspect-square relative flex bg-white
     }
+    .uploadedImageDiv>input {
+        @apply px-4 h-fit py-2 font-semibold cursor-pointer
+    }
+
     .imageSelectDiv {
-        @apply relative
+        @apply relative h-14 w-full
     }
     .imageSelectDiv > span{
-        @apply absolute top-0 left-0 h-14 aspect-square p-4
+        @apply absolute top-0 left-1/2 -translate-x-1/2 h-14 aspect-square p-4 rounded-full
     }
-    .imageSelectButton {
-        @apply h-14 aspect-square rounded-full p-4 z-10 relative
+
+    .selectData {
+        @apply flex gap-4
+    }
+    .selectData > select {
+        @apply w-full
     }
 
 .cropEasyDiv {
     @apply h-screen w-full fixed z-50 top-0 right-0 left-0 flex justify-center items-center
 }
+
 .cropEasyDiv {
     background-color: hsl(var(--black-color) / .25);
-}
-
-
-
-.main {
-    background-color: hsl(var(--light-white-color));
 }
 
 .main>h1 {
@@ -88,17 +98,23 @@
     color: hsl(var(--primary-color));
 }
 
-.detailDiv>div>button {
-    background-color: hsl(var(--primary-color) / .5);
-    color: hsl(var(--black-color) / .75);
-    transition: all 0.5s;
+.uploadedImageDiv>input,
+.selectData > input,
+.detailDiv>div>.addButton {
+    background-color: hsl(var(--primary-color) / .25);
+    color: hsl(var(--black-color));
+    transition: all 0.25s;
 }
 
-.detailDiv>div>button:focus,
-.detailDiv>div>button:hover {
-    transition: all 0.5s;
-    background-color: hsl(var(--primary-color) / .75);
-    color: hsl(var(--white-color) / .75);
+.uploadedImageDiv>input:focus,
+.uploadedImageDiv>input:hover,
+.selectData > input:focus,
+.selectData > input:hover,
+.detailDiv>div>.addButton:focus,
+.detailDiv>div>.addButton:hover {
+    transition: all 0.25s;
+    background-color: hsl(var(--primary-color));
+    color: hsl(var(--white-color));
 }
 
 .imageDiv>div>div {
@@ -106,40 +122,48 @@
 }
 .form>input,
 .form>textarea,
-.form>select,
-.form>select>option,
-.priceDiv>div>input,
+.selectData>select,
+.selectData>select>option,
+.priceInputDiv>input,
 .detailDiv>div>input {
-    border-color: hsl(var(--primary-color) / .25);
+    border-color: hsl(var(--primary-color) / .4);
     color: hsl(var(--black-color) / .75);
 }
 
+.priceInputDiv>input:focus,
+.detailDiv>div>input:focus,
 .form>input:focus,
 .form>textarea:focus,
-.form>select:focus {
+.selectData>select:focus {
     border-color: hsl(var(--primary-color) / .75);
 }
 
-.detailDiv>.displayDetailDiv,
-.priceDiv>h1 {
+.detailDiv>.displayDetailDiv>div>h3,
+.priceDiv>h3 {
     font-family: 'Jost', sans-serif;
     color: hsl(var(--primary-color) / .75);
 }
 
-/* .imageSelectDiv > .imageSelectButton {
-    border-color: hsl(var(--primary-color) / .25);
-    color: hsl(var(--black-color) / .75);
-} */
+.displayDetailDiv > div > span,
 .imageSelectDiv > .imageSelectButton, .form > button {
-    background-color: hsl(var(--primary-color) / .75);
-    fill: hsl(var(--white-color) / .75);
-    color: hsl(var(--white-color) / .75);
+    background-color: hsl(var(--primary-color) / .5);
+    color: hsl(var(--black-color));
     font-family: 'Jost', sans-serif;
     font-size: 1.2rem;
     font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
-.imageDiv > button:hover, .form > button:hover {
-    background-color: hsl(var(--primary-color) / .5);
-    fill: hsl(var(--white-color) / .75);
+.displayDetailDiv > div > span:hover,
+.imageDiv > p > span:hover, .form > button:hover {
+    background-color: hsl(var(--primary-color));
     color: hsl(var(--white-color));
+}
+
+.priceInputDiv {
+    @apply flex flex-col w-full
+}
+
+.priceInputDiv > label {
+    @apply font-semibold pl-1
 }

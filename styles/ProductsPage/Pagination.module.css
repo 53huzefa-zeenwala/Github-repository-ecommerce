@@ -1,34 +1,46 @@
-@tailwind components;
 
-@layer components {
-    .mainDiv {
-        @apply px-4 py-2 flex justify-between items-center
-    }
-    .buttonDiv >button {
-        @apply py-1.5 font-medium capitalize text-xl rounded-xl w-full 
-    }
-    .buttonDiv {
-        @apply w-[4.5rem]
-    }
-    
-    .mainDiv >h1 {
-        @apply text-lg capitalize
-    }
-}
 .mainDiv {
-    background-color: hsl(var(--light-white-color));
+    @apply py-2 flex justify-between items-center
 }
+/* .buttonDiv {
+    @apply
+} */
+.buttonDiv >button {
+    @apply  font-medium capitalize text-xl w-fit relative flex gap-1 items-center h-fit
+}
+.buttonDiv >button > img {
+    @apply  w-2.5 mt-0.5
+}
+    
+.mainDiv >h1 {
+    @apply text-lg capitalize
+}
+
 .mainDiv > h1{
     color: hsl(var(--primary-color));
 }
 
 .buttonDiv > button {
-    color: hsl(var(--secondary-color) 35%);
-    background-color: hsl(var(--secondary-color) 92%);
-}
-.buttonDiv > button:hover, .buttonDiv > button:focus {
-    color: hsl(var(--secondary-color) 92%);
-    background-color: hsl(var(--secondary-color) 35%);
+    color: hsl(var(--black-color) );
     outline: none;
 }
+
+.buttonDiv > button::after {
+    position: absolute;
+    content: attr(data-content);
+    bottom: -0.5px;
+    left: 0;
+    height: 0.5px;
+    width: 0%;
+    background-color: hsl(var(--black-color));
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.buttonDiv > button:hover::before,
+.buttonDiv > button:hover::after,
+.buttonDiv > button:focus::before,
+.buttonDiv > button:focus::after {
+    width: 100%;
+    }
 

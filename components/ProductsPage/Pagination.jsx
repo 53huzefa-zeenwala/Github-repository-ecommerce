@@ -9,11 +9,12 @@ export default function Pagination() {
     return (
         <div className={styles.mainDiv}>
             <div className={styles.buttonDiv}>
-                {pageNumber === 0 || <button className={styles.pervButton} onClick={() => setPageNumber(pageNumber - 1)}>perv</button>}
+                {pageNumber === 0 || <button data-content="Perv" className={styles.pervButton} onClick={() => setPageNumber(pageNumber - 1)}>
+                    <img src="/icon/left-arrow-svgrepo-com (1).svg" alt="" /> Perv</button>}
             </div>
             <h1>page no - {pageNumber + 1}</h1>
             <div className={styles.buttonDiv}>
-                {totalResults / itemPerPage > pageNumber + 1 && <button className={styles.nextButton} onClick={() => setPageNumber(pageNumber + 1)}>next</button>}
+                {totalResults / itemPerPage > pageNumber + 1 && <button data-content="Next" className={styles.nextButton} onClick={() => setPageNumber(pageNumber + 1)}>Next<img src="/icon/right-arrow-svgrepo-com.svg" alt="" /></button>}
             </div>
         </div>
     )

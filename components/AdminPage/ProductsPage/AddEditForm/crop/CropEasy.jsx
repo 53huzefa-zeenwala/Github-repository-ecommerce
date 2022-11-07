@@ -1,13 +1,16 @@
 // import { Box, Button, DialogActions, DialogContent, Slider, Typography } from "@mui/material"
+import axios from "axios"
 import { useState } from "react"
 import Cropper from 'react-easy-crop'
+import { useStateContext } from "../../../../../context/Statecontext"
 // import { Cancel } from '@mui/icons-material'
 // import CropIcon from '@mui/icons-material/Crop'
 import getCroppedImg from "./utils/cropImage"
 // import { useAuth } from "../../context/AuthContext"
 
-const CropEasy = ({ photoURL, setOpenCrop, setPhotoURL, setFile }) => {
 
+const CropEasy = ({ photoURL, setOpenCrop, setPhotoURL, setFile }) => {
+    const { setLoading, setAlert } = useStateContext()
     const [crop, setCrop] = useState({ x: 0, y: 0 })
     const [zoom, setZoom] = useState(1)
     const [rotation, setRotation] = useState(0)
@@ -17,23 +20,28 @@ const CropEasy = ({ photoURL, setOpenCrop, setPhotoURL, setFile }) => {
         setCroppedAreaPixels(croppedAreaPixels)
     }
     const cropImage = async () => {
-        // setLoading(true)
+        setLoading(true)
         try {
             const { file, url } = await getCroppedImg(photoURL, croppedAreaPixels, rotation)
+            const data = new FormData()
+            data.append("file", file)
+            data.append("upload_preset", "uploads");
+            const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/indvidual/image/upload", data)
+
+            console.log(uploadRes.data, "url")
             setPhotoURL(url)
-            setFile(file)
-            setOpenCrop(false)
+
+            setFile((perv) => [
+                ...perv,
+                uploadRes.data.url
+            ])
+
         } catch (error) {
-            // setAlert({
-            //     isAlert: true,
-            //     severity: 'error',
-            //     message: error.message,
-            //     timeout: 5000,
-            //     location: 'modal',
-            // });
+            setAlert({ show: true, type: 'error', message: error.message, timeout: 3000 })
             console.log(error);
         }
-        // setLoading(false)
+        setOpenCrop(false)
+        setLoading(false)
     }
 
     const closeModal = () => {

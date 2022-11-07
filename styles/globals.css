@@ -11,3 +11,9 @@
   --light-white-color:var(--secondary-color) 97%;
   --gray-color:var(--secondary-color) 50%;
 }
+
+main {
+  padding: 1rem;
+  background-color:  hsl(var(--light-white-color));
+  width: 100%;
+}

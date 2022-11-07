@@ -1,0 +1,19 @@
+.editMain {
+    padding-bottom: 1rem;
+}
+.editMain > div {
+    @apply pt-1
+}
+
+.editMain > div > button {
+    @apply py-2 px-3 placeholder:font-medium font-medium focus:outline-none rounded-lg w-full text-lg
+}
+
+.editMain > div > button {
+    background-color: #cc3300c7;
+    color: hsl(var(--white-color));
+    transition: background-color 0.25s ease;
+}
+.editMain > div > button:hover, .editMain > div > button:focus{
+    background-color: #cc3300;
+}

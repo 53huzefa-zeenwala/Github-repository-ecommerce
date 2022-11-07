@@ -1,11 +1,12 @@
 import React from 'react'
-import Categories from '../../components/AdminPage/Categories'
+import Settings from '../../components/AdminPage/Settings'
 
 export default function admin() {
   return (
-    <div>
-        <Categories />
-    </div>
+    <>
+        <Settings />
+        <main></main>
+    </>
   )
 }
 

@@ -5,6 +5,7 @@ export const StateContext = ({ children }) => {
   const [checkOutItem, setCheckOutItem] = useState([]);
   const [cartItemQuantity, setCartItemQuantity] = useState(0);
   const [alert, setAlert] = useState({show: false, type: '',message: '', timeout: 3000 })
+  const [loading, setLoading] = useState(false)
   
   return (
     <Context.Provider
@@ -14,7 +15,9 @@ export const StateContext = ({ children }) => {
         alert,
         setAlert,
         cartItemQuantity,
-        setCartItemQuantity
+        setCartItemQuantity,
+        setLoading,
+        loading
       }}
     >
       {children}

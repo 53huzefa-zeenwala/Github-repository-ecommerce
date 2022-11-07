@@ -2,7 +2,7 @@
 
 @layer components {
     .mainDiv {
-        @apply px-6 py-2 flex flex-col
+        @apply p-2 flex flex-col
     }
 
     .mainDiv>h1 {
@@ -14,7 +14,7 @@
     }
 
     .imageDiv {
-        @apply relative aspect-square rounded-t-xl overflow-hidden w-40 rounded-xl
+        @apply relative aspect-square rounded-t-xl overflow-hidden rounded-xl w-40
     }
 
     .productsDiv {
@@ -44,6 +44,7 @@
     border: 2px solid;
     border-color: hsl(var(--white-color));
     overflow: hidden;
+    width: 100%;
 }
 
 
@@ -79,10 +80,6 @@
     color: hsl(var(--primary-color));
 }
 
-.mainDiv {
-    background-color: hsl(var(--light-white-color));
-}
-
 .mainDiv>a:hover,
 .mainDiv>a:hover {
     color: hsl(var(--black-color));
@@ -100,6 +97,16 @@
 }
 
 .productDiv:hover, .productDiv:hover {
-    transform: scale(1.025);
+    transform: scale(1.015);
 }
 
+@media (max-width:400px) {
+    .imageDiv {
+        width: 7rem;
+    }    
+}
+@media (max-width:350px) {
+    .imageDiv {
+        width: 6rem;
+    }    
+}
