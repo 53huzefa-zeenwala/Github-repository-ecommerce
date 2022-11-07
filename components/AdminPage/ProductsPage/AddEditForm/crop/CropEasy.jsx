@@ -20,7 +20,7 @@ const CropEasy = ({ photoURL, setOpenCrop, setPhotoURL, setFile }) => {
         setCroppedAreaPixels(croppedAreaPixels)
     }
     const cropImage = async () => {
-        setLoading(true)
+        // setLoading(true)
         try {
             const { file, url } = await getCroppedImg(photoURL, croppedAreaPixels, rotation)
             const data = new FormData()
